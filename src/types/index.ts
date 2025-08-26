@@ -3,6 +3,7 @@ export interface App {
   name: string;
   concept: string;
   architectureImage: string;
+  demoGifImage: string;
   designIntent: string;
   demoVideoUrl?: string;
   interactiveDemoUrl?: string;

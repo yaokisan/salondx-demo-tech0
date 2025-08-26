@@ -10,9 +10,11 @@ interface AppCardProps {
 }
 
 export default function AppCard({ app }: AppCardProps) {
-  const [isImageModalOpen, setIsImageModalOpen] = useState(false);
+  const [isDemoGifModalOpen, setIsDemoGifModalOpen] = useState(false);
+  const [isArchitectureModalOpen, setIsArchitectureModalOpen] = useState(false);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [isDesignIntentExpanded, setIsDesignIntentExpanded] = useState(false);
+  const [isArchitectureExpanded, setIsArchitectureExpanded] = useState(false);
 
   return (
     <>
@@ -22,19 +24,20 @@ export default function AppCard({ app }: AppCardProps) {
           <p className="text-sm text-gray-600 italic">{app.concept}</p>
         </div>
 
+        {/* Demo GIF Display */}
         <div className="mb-4">
           <div 
             className="w-full h-48 bg-white rounded-lg overflow-hidden cursor-pointer hover:shadow-md transition-shadow border border-gray-200 p-4 relative group"
-            onClick={() => setIsImageModalOpen(true)}
+            onClick={() => setIsDemoGifModalOpen(true)}
           >
             <img
-              src={app.architectureImage}
-              alt={`${app.name} アーキテクチャ図`}
+              src={app.demoGifImage}
+              alt={`${app.name} デモ`}
               className="w-full h-full object-contain"
               style={{ display: 'block' }}
             />
             <div className="absolute top-2 right-2 bg-white bg-opacity-90 px-2 py-1 rounded text-xs opacity-0 group-hover:opacity-100 transition-opacity shadow">
-              クリックで拡大
+              タップでデモを再生
             </div>
           </div>
         </div>
@@ -63,6 +66,41 @@ export default function AppCard({ app }: AppCardProps) {
         </div>
 
         <div className="space-y-3">
+          {/* Architecture Diagram Accordion */}
+          <button
+            onClick={() => setIsArchitectureExpanded(!isArchitectureExpanded)}
+            className="w-full bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center justify-between"
+          >
+            <span>アーキテクチャ図を見る</span>
+            <svg 
+              className={`w-4 h-4 text-white transition-transform ${isArchitectureExpanded ? 'rotate-180' : ''}`}
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          
+          {isArchitectureExpanded && (
+            <div className="mt-4 bg-gray-50 p-4 rounded-lg">
+              <div 
+                className="w-full h-48 bg-white rounded-lg overflow-hidden cursor-pointer hover:shadow-md transition-shadow border border-gray-200 p-4 relative group"
+                onClick={() => setIsArchitectureModalOpen(true)}
+              >
+                <img
+                  src={app.architectureImage}
+                  alt={`${app.name} アーキテクチャ図`}
+                  className="w-full h-full object-contain"
+                  style={{ display: 'block' }}
+                />
+                <div className="absolute top-2 right-2 bg-white bg-opacity-90 px-2 py-1 rounded text-xs opacity-0 group-hover:opacity-100 transition-opacity shadow">
+                  クリックで拡大
+                </div>
+              </div>
+            </div>
+          )}
+          
           {app.demoVideoUrl && (
             <button
               onClick={() => setIsVideoModalOpen(true)}
@@ -85,11 +123,20 @@ export default function AppCard({ app }: AppCardProps) {
         </div>
       </div>
 
+      {/* Demo GIF Modal */}
+      <ImageModal
+        src={app.demoGifImage}
+        alt={`${app.name} デモ`}
+        isOpen={isDemoGifModalOpen}
+        onClose={() => setIsDemoGifModalOpen(false)}
+      />
+
+      {/* Architecture Modal */}
       <ImageModal
         src={app.architectureImage}
         alt={`${app.name} アーキテクチャ図`}
-        isOpen={isImageModalOpen}
-        onClose={() => setIsImageModalOpen(false)}
+        isOpen={isArchitectureModalOpen}
+        onClose={() => setIsArchitectureModalOpen(false)}
       />
 
       {app.demoVideoUrl && (
