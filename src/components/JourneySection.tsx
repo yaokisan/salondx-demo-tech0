@@ -30,6 +30,24 @@ export default function JourneySection({
 
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
+          
+          {/* Promotional Video First */}
+          <div className="max-w-4xl mx-auto mb-16">
+            <h3 className="text-2xl font-semibold text-gray-900 mb-8 text-center">
+              Salon DX プロモーション動画
+            </h3>
+            <div className="bg-gray-100 rounded-2xl p-6 shadow-lg">
+              <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                <iframe
+                  src={promotionalVideoUrl}
+                  className="absolute inset-0 w-full h-full rounded-xl"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div 
@@ -83,28 +101,6 @@ export default function JourneySection({
                     <p className="text-gray-600 text-sm">{targetAudience.description}</p>
                   )}
                 </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-8 text-center">
-              Salon DX プロモーション動画
-            </h3>
-            <div className="bg-gray-100 rounded-2xl p-6 shadow-lg">
-              <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-                <iframe
-                  src={promotionalVideoUrl}
-                  className="absolute inset-0 w-full h-full rounded-xl"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-              <div className="mt-4 text-center">
-                <p className="text-sm text-gray-600">
-                  VBO事業の軌跡と未来への挑戦
-                </p>
               </div>
             </div>
           </div>

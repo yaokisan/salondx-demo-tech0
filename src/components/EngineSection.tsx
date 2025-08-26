@@ -24,16 +24,11 @@ export default function EngineSection({ apps }: EngineSectionProps) {
       </div>
 
       {/* Apps Section */}
-      <div className="py-16">
+      <div className="py-4">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-              3つのDXアプリケーション
-            </h2>
-          </div>
           
           {/* Swipe Indicator */}
-          <div className="flex justify-center items-center mb-6">
+          <div className="flex justify-center items-center mb-4">
             <div className="flex items-center bg-blue-50 px-4 py-2 rounded-full">
               <svg className="w-5 h-5 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" />
@@ -47,9 +42,9 @@ export default function EngineSection({ apps }: EngineSectionProps) {
           
           {/* Cards Container */}
           <div className="overflow-x-auto scrollbar-hide">
-            <div className="flex space-x-4 pb-6 px-4" style={{ width: 'fit-content' }}>
-              {apps.map((app, index) => (
-                <div key={app.id} className={`${index === 0 ? 'ml-4' : ''} ${index === apps.length - 1 ? 'mr-4' : ''}`}>
+            <div className="flex space-x-4 pb-6" style={{ width: 'fit-content', paddingLeft: 'calc(50vw - 160px)', paddingRight: 'calc(50vw - 160px)' }}>
+              {apps.map((app) => (
+                <div key={app.id}>
                   <AppCard app={app} />
                 </div>
               ))}
