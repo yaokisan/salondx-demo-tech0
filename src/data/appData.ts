@@ -5,40 +5,40 @@ export const appData: AppData = {
     {
       id: 'vision-board',
       name: 'VISION BOARD',
-      concept: '戦略立案を支える視覚化エンジン',
-      architectureImage: '/images/vision-board-architecture.svg',
-      designIntent: 'ビジョンボードは、組織の戦略的思考を可視化し、チーム全体の認識を統一するためのプラットフォームです。複雑な事業戦略を直感的に理解できるインターフェースを提供し、意思決定の質とスピードを劇的に向上させます。',
+      concept: '流動型の目標管理を支える戦略OS',
+      architectureImage: '/images/vision-board-architecture.jpg',
+      designIntent: 'テクノロジー革命で世界の常識が数ヶ月で書き換わる時代になり、組織の目標はより短いスパンで更新が必要になりました。\n\nしかし、その変化の速度に組織内の「共通認識」が追いつかなければ、チームは徐々に一体感を失い、気づかぬうちに別の方向を向いてしまいます。\n\nVISION BOARDは、流動的な目標と責任範囲を、常にリアルタイムで、全員がアクセスできる場所に可視化し続ける。これにより、チームは変化を恐れることなく、しかし常に同じ未来を見据えながら、日々の意思決定を下すことが可能になります。',
       demoVideoUrl: 'https://www.youtube.com/embed/PLACEHOLDER_VIDEO_ID'
     },
     {
       id: 'focus-goal',
       name: 'Focus Goal',
-      concept: '集中力を最大化する目標管理システム',
-      architectureImage: '/images/focus-goal-architecture.svg',
-      designIntent: 'Focus Goalは、個人とチームの目標設定から実行までを一元管理し、本当に重要なタスクへの集中を促進します。科学的なタスク優先度付けアルゴリズムと直感的なUIにより、生産性の飛躍的向上を実現します。',
+      concept: '目標起点のPJ管理アプリ',
+      architectureImage: '/images/focus-goal-architecture.jpg',
+      designIntent: '少数精鋭のチームにとって、最も貴重なリソースは「集中力」です。複数のプロジェクトを同時に進める時、その集中力は分散され、本当に重要なことを見失いがちになります。\n\nFocus Goalは、「今、我々が全力で取り組むべきは何か？」という問いに、常に明確な答えを出すために設計されました。\n\nユーザーが特定のゴールを選択すると、そのゴールに関係のないタスクは全て視界から消え、目標達成への最短経路だけが示されます。これは、チームの貴重なエネルギーを、常に最も重要な一点に注ぎ込むための、意図的な"選択と集中"を促すツールです。',
       demoVideoUrl: 'https://www.youtube.com/embed/PLACEHOLDER_VIDEO_ID'
     },
     {
       id: 'casting-base',
       name: 'Casting BASE',
-      concept: '革新的な香盤表エディター',
-      architectureImage: '/images/casting-base-architecture.svg',
-      designIntent: 'Casting BASEは、エンターテインメント業界のキャスティング管理を根本から変革します。香盤表の作成・編集・共有を直感的に行える画期的なインターフェースにより、制作現場の効率を大幅に改善します。',
+      concept: '大型収録を一括管理するダッシュボードアプリ',
+      architectureImage: '/images/casting-base-architecture.jpg',
+      designIntent: '質の高い映像作品の制作現場は、本来クリエイティブな場であるべきです。しかし、実際には出演者やスタッフ間の膨大な情報共有、煩雑なスケジュール調整、そして度重なる香盤表の修正といった、地道で膨大な管理コストに、多くの時間と精神力が奪われていきます。\n\nCasting BASEは、その管理コストをテクノロジーで最小化し、人間の脳を、人間にしかできない創造的な作業に集中させるために設計されました。\n\n情報を一元化し、関係者間のコミュニケーションロスをなくす。そして、最も負荷の高かった香盤表の作成・修正作業を、直感的な操作で劇的に効率化する。これは、私たちのチームがクオリティとスピードを両立させるために、実務の痛みから生み出した、極めて実践的な答えです。',
       demoVideoUrl: 'https://www.youtube.com/embed/PLACEHOLDER_VIDEO_ID',
       interactiveDemoUrl: 'https://casting-base-demo.example.com'
     }
   ],
   businessModel: {
     title: 'VBO事業 ビジネスモデル',
-    imageUrl: '/images/vbo-business-model.svg',
+    imageUrl: '/images/vbo-business-model.png',
     description: 'VBO事業の包括的なビジネスモデル図'
   },
   targetAudience: {
     title: 'VBO事業 想定ターゲット',
-    imageUrl: '/images/vbo-target-audience.svg',
+    imageUrl: '/images/vbo-target-audience.png',
     description: 'VBO事業が対象とする顧客層の分析'
   },
-  promotionalVideoUrl: 'https://www.youtube.com/embed/PLACEHOLDER_PROMO_VIDEO',
+  promotionalVideoUrl: 'https://www.youtube.com/embed/SwtAThblX-c',
   invitationMessage: '少しでも興味を持っていただけたら、気軽に連絡をください。一緒に新しい未来を創造していきましょう。',
   xAccountUrl: 'https://x.com/yaokisan'
 };

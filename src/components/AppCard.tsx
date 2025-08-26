@@ -43,7 +43,9 @@ export default function AppCard({ app }: AppCardProps) {
         </div>
 
         <div className="mb-6">
-          <p className="text-sm text-gray-700 leading-relaxed">{app.designIntent}</p>
+          <div className="text-sm text-gray-700 leading-relaxed whitespace-pre-line">
+            {app.designIntent}
+          </div>
         </div>
 
         <div className="space-y-3">
