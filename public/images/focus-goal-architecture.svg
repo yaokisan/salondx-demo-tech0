@@ -1,0 +1,24 @@
+<svg width="800" height="450" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="450" fill="#f3e5f5"/>
+  <rect x="50" y="50" width="700" height="350" fill="#ffffff" stroke="#9c27b0" stroke-width="2" rx="10"/>
+  <text x="400" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#7b1fa2">Focus Goal</text>
+  <text x="400" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#666">アーキテクチャ図</text>
+  
+  <circle cx="200" cy="220" r="40" fill="#e1bee7" stroke="#7b1fa2" stroke-width="2"/>
+  <text x="200" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#7b1fa2">User Interface</text>
+  
+  <circle cx="400" cy="220" r="40" fill="#f8bbd9" stroke="#e91e63" stroke-width="2"/>
+  <text x="400" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#e91e63">Goal Engine</text>
+  
+  <circle cx="600" cy="220" r="40" fill="#fff3e0" stroke="#ff9800" stroke-width="2"/>
+  <text x="600" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ff9800">Analytics</text>
+  
+  <line x1="240" y1="220" x2="360" y2="220" stroke="#666" stroke-width="2" marker-end="url(#arrowhead2)"/>
+  <line x1="440" y1="220" x2="560" y2="220" stroke="#666" stroke-width="2" marker-end="url(#arrowhead2)"/>
+  
+  <defs>
+    <marker id="arrowhead2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+</svg>

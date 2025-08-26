@@ -1,0 +1,29 @@
+<svg width="800" height="450" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="450" fill="#e8f5e8"/>
+  <rect x="50" y="50" width="700" height="350" fill="#ffffff" stroke="#4caf50" stroke-width="2" rx="10"/>
+  <text x="400" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#2e7d32">Casting BASE</text>
+  <text x="400" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#666">アーキテクチャ図</text>
+  
+  <rect x="150" y="180" width="120" height="60" fill="#c8e6c9" stroke="#2e7d32" rx="5"/>
+  <text x="210" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#2e7d32">香盤表エディター</text>
+  
+  <rect x="340" y="160" width="120" height="60" fill="#81c784" stroke="#2e7d32" rx="5"/>
+  <text x="400" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#2e7d32">キャスト管理</text>
+  
+  <rect x="340" y="240" width="120" height="60" fill="#81c784" stroke="#2e7d32" rx="5"/>
+  <text x="400" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#2e7d32">スケジュール</text>
+  
+  <rect x="530" y="180" width="120" height="60" fill="#ffecb3" stroke="#ffa000" rx="5"/>
+  <text x="590" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ffa000">データベース</text>
+  
+  <line x1="270" y1="210" x2="340" y2="190" stroke="#666" stroke-width="2" marker-end="url(#arrowhead3)"/>
+  <line x1="270" y1="210" x2="340" y2="270" stroke="#666" stroke-width="2" marker-end="url(#arrowhead3)"/>
+  <line x1="460" y1="190" x2="530" y2="210" stroke="#666" stroke-width="2" marker-end="url(#arrowhead3)"/>
+  <line x1="460" y1="270" x2="530" y2="210" stroke="#666" stroke-width="2" marker-end="url(#arrowhead3)"/>
+  
+  <defs>
+    <marker id="arrowhead3" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+</svg>
