@@ -42,7 +42,7 @@ export default function EngineSection({ apps }: EngineSectionProps) {
           
           {/* Cards Container */}
           <div className="overflow-x-auto scrollbar-hide">
-            <div className="flex space-x-4 pb-6" style={{ width: 'fit-content', paddingLeft: 'calc(50vw - 160px)', paddingRight: 'calc(50vw - 160px)' }}>
+            <div className="flex space-x-4 pb-6" style={{ width: 'fit-content', paddingLeft: 'calc(50vw - 200px)', paddingRight: 'calc(50vw - 200px)' }}>
               {apps.map((app) => (
                 <div key={app.id}>
                   <AppCard app={app} />
