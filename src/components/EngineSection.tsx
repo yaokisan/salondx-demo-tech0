@@ -27,12 +27,9 @@ export default function EngineSection({ apps }: EngineSectionProps) {
       <div className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
-              THE ENGINE
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+              3つのDXアプリケーション
             </h2>
-            <p className="text-lg md:text-xl text-gray-600 mb-8">
-              異次元の生産性を支える3つの経営システム
-            </p>
           </div>
           
           {/* Swipe Indicator */}

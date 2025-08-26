@@ -24,19 +24,17 @@ export default function AppCard({ app }: AppCardProps) {
 
         <div className="mb-4">
           <div 
-            className="relative w-full aspect-video bg-white rounded-lg overflow-hidden cursor-pointer hover:shadow-md transition-shadow border border-gray-200"
+            className="w-full h-48 bg-white rounded-lg overflow-hidden cursor-pointer hover:shadow-md transition-shadow border border-gray-200 p-4 relative group"
             onClick={() => setIsImageModalOpen(true)}
           >
             <img
               src={app.architectureImage}
               alt={`${app.name} アーキテクチャ図`}
-              className="absolute inset-0 w-full h-full object-contain p-2"
-              loading="eager"
+              className="w-full h-full object-contain"
+              style={{ display: 'block' }}
             />
-            <div className="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-10 transition-all flex items-center justify-center">
-              <div className="bg-white bg-opacity-90 px-3 py-1 rounded text-xs opacity-0 hover:opacity-100 transition-opacity shadow">
-                クリックで拡大
-              </div>
+            <div className="absolute top-2 right-2 bg-white bg-opacity-90 px-2 py-1 rounded text-xs opacity-0 group-hover:opacity-100 transition-opacity shadow">
+              クリックで拡大
             </div>
           </div>
         </div>
