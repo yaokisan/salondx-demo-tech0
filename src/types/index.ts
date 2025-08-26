@@ -4,7 +4,8 @@ export interface App {
   concept: string;
   architectureImage: string;
   demoThumbnailImage: string;
-  demoGifImage: string;
+  demoGifImage?: string;
+  demoVideoFile?: string;
   designIntent: string;
   demoVideoUrl?: string;
   interactiveDemoUrl?: string;

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { App } from '@/types';
 import ImageModal from './ImageModal';
+import VideoFileModal from './VideoFileModal';
 
 interface AppCardProps {
   app: App;
@@ -10,6 +11,7 @@ interface AppCardProps {
 
 export default function AppCard({ app }: AppCardProps) {
   const [isDemoGifModalOpen, setIsDemoGifModalOpen] = useState(false);
+  const [isDemoVideoModalOpen, setIsDemoVideoModalOpen] = useState(false);
   const [isArchitectureModalOpen, setIsArchitectureModalOpen] = useState(false);
   const [isDesignIntentExpanded, setIsDesignIntentExpanded] = useState(false);
   const [isArchitectureExpanded, setIsArchitectureExpanded] = useState(false);
@@ -26,7 +28,13 @@ export default function AppCard({ app }: AppCardProps) {
         <div className="mb-4">
           <div 
             className="w-full h-48 bg-white rounded-lg overflow-hidden cursor-pointer hover:shadow-md transition-shadow border border-gray-200 p-4 relative group"
-            onClick={() => setIsDemoGifModalOpen(true)}
+            onClick={() => {
+              if (app.demoVideoFile) {
+                setIsDemoVideoModalOpen(true);
+              } else {
+                setIsDemoGifModalOpen(true);
+              }
+            }}
           >
             <img
               src={app.demoThumbnailImage}
@@ -102,7 +110,7 @@ export default function AppCard({ app }: AppCardProps) {
           {/* Explanatory text for VISION BOARD and Focus Goal */}
           {(app.id === 'vision-board' || app.id === 'focus-goal') && (
             <div className="text-xs text-gray-600 text-left leading-relaxed mt-2">
-              PC版アプリ&完全自社専用なので、触ってもらえるデモアプリが間に合わなかった...。無念。
+              ※PC版アプリ&完全自社専用なので、触ってもらえるデモアプリが間に合いませんでした。無念。
             </div>
           )}
           
@@ -129,12 +137,24 @@ export default function AppCard({ app }: AppCardProps) {
       </div>
 
       {/* Demo GIF Modal */}
-      <ImageModal
-        src={app.demoGifImage}
-        alt={`${app.name} デモ`}
-        isOpen={isDemoGifModalOpen}
-        onClose={() => setIsDemoGifModalOpen(false)}
-      />
+      {app.demoGifImage && (
+        <ImageModal
+          src={app.demoGifImage}
+          alt={`${app.name} デモ`}
+          isOpen={isDemoGifModalOpen}
+          onClose={() => setIsDemoGifModalOpen(false)}
+        />
+      )}
+      
+      {/* Demo Video Modal */}
+      {app.demoVideoFile && (
+        <VideoFileModal
+          src={app.demoVideoFile}
+          isOpen={isDemoVideoModalOpen}
+          onClose={() => setIsDemoVideoModalOpen(false)}
+          title={`${app.name} デモ`}
+        />
+      )}
 
       {/* Architecture Modal */}
       <ImageModal
