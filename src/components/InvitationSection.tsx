@@ -11,7 +11,7 @@ export default function InvitationSection({ invitationMessage, xAccountUrl }: In
       <div className="container mx-auto px-4 text-center">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-            THE INVITATION
+            THANK YOU !!
           </h2>
           
           <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-10">
@@ -31,11 +31,11 @@ export default function InvitationSection({ invitationMessage, xAccountUrl }: In
             >
               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
             </svg>
-            Xでコンタクト
+            @sc_fas_cod
           </a>
           
           <div className="mt-8 text-sm text-gray-500">
-            新しい未来を一緒に創造しましょう
+            折角のご縁なので、気軽にDMください😍
           </div>
         </div>
       </div>
