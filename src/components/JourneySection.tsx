@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 import { BusinessAsset } from '@/types';
 import ImageModal from './ImageModal';
 
@@ -39,12 +38,10 @@ export default function JourneySection({
             >
               <div className="bg-gray-100 rounded-xl overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow">
                 <div className="relative aspect-video">
-                  <Image
+                  <img
                     src={businessModel.imageUrl}
                     alt={businessModel.title}
-                    fill
-                    className="object-contain group-hover:scale-105 transition-transform duration-300"
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all flex items-center justify-center">
                     <div className="bg-white bg-opacity-90 px-3 py-2 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity">
@@ -69,12 +66,10 @@ export default function JourneySection({
             >
               <div className="bg-gray-100 rounded-xl overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow">
                 <div className="relative aspect-video">
-                  <Image
+                  <img
                     src={targetAudience.imageUrl}
                     alt={targetAudience.title}
-                    fill
-                    className="object-contain group-hover:scale-105 transition-transform duration-300"
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all flex items-center justify-center">
                     <div className="bg-white bg-opacity-90 px-3 py-2 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity">

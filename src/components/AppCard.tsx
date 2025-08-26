@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 import { App } from '@/types';
 import ImageModal from './ImageModal';
 import VideoModal from './VideoModal';
@@ -13,6 +12,7 @@ interface AppCardProps {
 export default function AppCard({ app }: AppCardProps) {
   const [isImageModalOpen, setIsImageModalOpen] = useState(false);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  const [isDesignIntentExpanded, setIsDesignIntentExpanded] = useState(false);
 
   return (
     <>
@@ -24,18 +24,17 @@ export default function AppCard({ app }: AppCardProps) {
 
         <div className="mb-4">
           <div 
-            className="relative w-full aspect-video bg-gray-100 rounded-lg overflow-hidden cursor-pointer hover:shadow-md transition-shadow"
+            className="relative w-full aspect-video bg-white rounded-lg overflow-hidden cursor-pointer hover:shadow-md transition-shadow border border-gray-200"
             onClick={() => setIsImageModalOpen(true)}
           >
-            <Image
+            <img
               src={app.architectureImage}
               alt={`${app.name} アーキテクチャ図`}
-              fill
-              className="object-contain"
-              sizes="(max-width: 320px) 280px, 320px"
+              className="absolute inset-0 w-full h-full object-contain p-2"
+              loading="eager"
             />
             <div className="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-10 transition-all flex items-center justify-center">
-              <div className="bg-white bg-opacity-80 px-2 py-1 rounded text-xs opacity-0 hover:opacity-100 transition-opacity">
+              <div className="bg-white bg-opacity-90 px-3 py-1 rounded text-xs opacity-0 hover:opacity-100 transition-opacity shadow">
                 クリックで拡大
               </div>
             </div>
@@ -43,9 +42,26 @@ export default function AppCard({ app }: AppCardProps) {
         </div>
 
         <div className="mb-6">
-          <div className="text-sm text-gray-700 leading-relaxed whitespace-pre-line">
-            {app.designIntent}
-          </div>
+          <button
+            onClick={() => setIsDesignIntentExpanded(!isDesignIntentExpanded)}
+            className="w-full text-left bg-gray-50 hover:bg-gray-100 px-4 py-3 rounded-lg transition-colors flex items-center justify-between"
+          >
+            <span className="text-sm font-medium text-gray-900">設計意図を見る</span>
+            <svg 
+              className={`w-4 h-4 text-gray-600 transition-transform ${isDesignIntentExpanded ? 'rotate-180' : ''}`}
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          
+          {isDesignIntentExpanded && (
+            <div className="mt-4 text-sm text-gray-700 leading-relaxed whitespace-pre-line bg-gray-50 p-4 rounded-lg">
+              {app.designIntent}
+            </div>
+          )}
         </div>
 
         <div className="space-y-3">
