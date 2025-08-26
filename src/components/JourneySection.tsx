@@ -4,7 +4,6 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { BusinessAsset } from '@/types';
 import ImageModal from './ImageModal';
-import VideoModal from './VideoModal';
 
 interface JourneySectionProps {
   businessModel: BusinessAsset;
@@ -44,7 +43,7 @@ export default function JourneySection({
                     src={businessModel.imageUrl}
                     alt={businessModel.title}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="object-contain group-hover:scale-105 transition-transform duration-300"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all flex items-center justify-center">
@@ -74,7 +73,7 @@ export default function JourneySection({
                     src={targetAudience.imageUrl}
                     alt={targetAudience.title}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="object-contain group-hover:scale-105 transition-transform duration-300"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all flex items-center justify-center">
@@ -95,19 +94,26 @@ export default function JourneySection({
             </div>
           </div>
 
-          <div className="text-center">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-6">
-              プロモーション動画
+          <div className="max-w-4xl mx-auto">
+            <h3 className="text-2xl font-semibold text-gray-900 mb-8 text-center">
+              Salon DX プロモーション動画
             </h3>
-            <button
-              onClick={() => setIsVideoModalOpen(true)}
-              className="inline-flex items-center bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg text-lg font-medium transition-colors shadow-lg hover:shadow-xl"
-            >
-              <svg className="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
-              </svg>
-              動画を見る
-            </button>
+            <div className="bg-gray-100 rounded-2xl p-6 shadow-lg">
+              <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                <iframe
+                  src={promotionalVideoUrl}
+                  className="absolute inset-0 w-full h-full rounded-xl"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+              <div className="mt-4 text-center">
+                <p className="text-sm text-gray-600">
+                  VBO事業の軌跡と未来への挑戦
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -120,13 +126,6 @@ export default function JourneySection({
           onClose={() => setSelectedImage(null)}
         />
       )}
-
-      <VideoModal
-        videoUrl={promotionalVideoUrl}
-        isOpen={isVideoModalOpen}
-        onClose={() => setIsVideoModalOpen(false)}
-        title="VBO事業 プロモーション動画"
-      />
     </>
   );
 }

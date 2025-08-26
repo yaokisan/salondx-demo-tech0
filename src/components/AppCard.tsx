@@ -31,7 +31,7 @@ export default function AppCard({ app }: AppCardProps) {
               src={app.architectureImage}
               alt={`${app.name} アーキテクチャ図`}
               fill
-              className="object-cover"
+              className="object-contain"
               sizes="(max-width: 320px) 280px, 320px"
             />
             <div className="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-10 transition-all flex items-center justify-center">

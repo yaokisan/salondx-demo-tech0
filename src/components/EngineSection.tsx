@@ -10,30 +10,31 @@ interface EngineSectionProps {
 
 export default function EngineSection({ apps }: EngineSectionProps) {
   return (
-    <>
-      {/* Hero Image Section */}
-      <section className="relative w-full h-screen">
+    <section className="bg-white">
+      {/* Header with Full Width Image */}
+      <div className="text-center py-12 bg-gray-50">
+        <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+          THE ENGINE
+        </h1>
+        <p className="text-lg md:text-xl text-gray-600 mb-8">
+          異次元の生産性を支える3つの経営システム
+        </p>
+      </div>
+      
+      {/* Full Width Image */}
+      <div className="w-full">
         <Image
           src="/images/engine-hero.jpg"
           alt="THE ENGINE"
-          fill
-          className="object-cover"
+          width={1200}
+          height={600}
+          className="w-full h-auto object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-          <div className="text-center text-white">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">
-              THE ENGINE
-            </h1>
-            <p className="text-xl md:text-2xl">
-              異次元の生産性を支える3つの経営システム
-            </p>
-          </div>
-        </div>
-      </section>
+      </div>
 
       {/* Apps Section */}
-      <section className="py-16 bg-white">
+      <div className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
@@ -72,7 +73,7 @@ export default function EngineSection({ apps }: EngineSectionProps) {
             ))}
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
