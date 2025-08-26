@@ -29,9 +29,12 @@ jobs:
       - name: List build output
         run: ls -la out/
 
+      - name: Archive static site
+        run: cd out && zip -r ../site.zip .
+
       - name: Deploy to Azure App Service
         uses: azure/webapps-deploy@v3
         with:
           app-name: app-002-gen10-step3-2-node-oshima6
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: ./out
+          package: ./site.zip
