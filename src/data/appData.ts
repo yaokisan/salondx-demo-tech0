@@ -11,7 +11,7 @@ export const appData: AppData = {
       demoVideoFile: '/images/casting-base-demo.mp4',
       designIntent: '質の高い映像作品の制作現場は、本来クリエイティブな場であるべきです。しかし、実際には出演者やスタッフ間の膨大な情報共有、煩雑なスケジュール調整、そして度重なる香盤表の修正といった、地道で膨大な管理コストに、多くの時間と精神力が奪われていきます。\n\nCasting BASEは、その管理コストをテクノロジーで最小化し、人間の脳を、人間にしかできない創造的な作業に集中させるために設計されました。\n\n情報を一元化し、関係者間のコミュニケーションロスをなくす。そして、最も負荷の高かった香盤表の作成・修正作業を、直感的な操作で劇的に効率化する。これは、私たちのチームがクオリティとスピードを両立させるために、実務の痛みから生み出した、極めて実践的な答えです。',
       demoVideoUrl: 'https://www.youtube.com/embed/PLACEHOLDER_VIDEO_ID',
-      interactiveDemoUrl: 'https://casting-base-demo.example.com'
+      interactiveDemoUrl: 'https://v2-brdashboard.vercel.app/admin/demo'
     },
     {
       id: 'vision-board',
