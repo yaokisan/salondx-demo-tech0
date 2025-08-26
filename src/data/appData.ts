@@ -40,5 +40,5 @@ export const appData: AppData = {
   },
   promotionalVideoUrl: 'https://www.youtube.com/embed/PLACEHOLDER_PROMO_VIDEO',
   invitationMessage: '少しでも興味を持っていただけたら、気軽に連絡をください。一緒に新しい未来を創造していきましょう。',
-  xAccountUrl: 'https://x.com/your_account'
+  xAccountUrl: 'https://x.com/yaokisan'
 };
