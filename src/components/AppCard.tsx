@@ -43,7 +43,7 @@ export default function AppCard({ app }: AppCardProps) {
         <div className="mb-6">
           <button
             onClick={() => setIsDesignIntentExpanded(!isDesignIntentExpanded)}
-            className="w-full text-left bg-gray-50 hover:bg-gray-100 px-4 py-3 rounded-lg transition-colors flex items-center justify-between"
+            className="w-full text-left bg-gray-50 hover:bg-gray-100 active:bg-gray-200 active:scale-95 px-4 py-3 rounded-lg transition-all duration-150 flex items-center justify-between"
           >
             <span className="text-sm font-medium text-gray-900">アプリの設計思想</span>
             <svg 
@@ -67,7 +67,7 @@ export default function AppCard({ app }: AppCardProps) {
           {/* Architecture Diagram Accordion */}
           <button
             onClick={() => setIsArchitectureExpanded(!isArchitectureExpanded)}
-            className="w-full text-left bg-gray-50 hover:bg-gray-100 px-4 py-3 rounded-lg transition-colors flex items-center justify-between"
+            className="w-full text-left bg-gray-50 hover:bg-gray-100 active:bg-gray-200 active:scale-95 px-4 py-3 rounded-lg transition-all duration-150 flex items-center justify-between"
           >
             <span className="text-sm font-medium text-gray-900">アーキテクチャ</span>
             <svg 
@@ -99,16 +99,31 @@ export default function AppCard({ app }: AppCardProps) {
             </div>
           )}
           
+          {/* Explanatory text for VISION BOARD and Focus Goal */}
+          {(app.id === 'vision-board' || app.id === 'focus-goal') && (
+            <div className="text-xs text-gray-600 text-left leading-relaxed mt-2">
+              PC版アプリ&完全自社専用なので、触ってもらえるデモアプリが間に合わなかった...。無念。
+            </div>
+          )}
           
           {app.interactiveDemoUrl && (
-            <a
-              href={app.interactiveDemoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg text-base font-bold text-center transition-colors shadow-lg hover:shadow-xl"
-            >
-              体験デモを試す
-            </a>
+            <div className="space-y-2">
+              <a
+                href={app.interactiveDemoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg text-base font-bold text-center transition-colors shadow-lg hover:shadow-xl"
+              >
+                体験デモを試す
+              </a>
+            </div>
+          )}
+          
+          {/* Demo usage note for Casting BASE */}
+          {app.interactiveDemoUrl && (
+            <div className="text-xs text-gray-600 text-left leading-relaxed mt-2">
+              ※スマホでも一応使えるのでデモを用意しましたが、PC推奨です。香盤表エディターはスマホで触れないのでデモ動画をご覧ください。
+            </div>
           )}
         </div>
       </div>
