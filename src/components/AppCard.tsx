@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { App } from '@/types';
 import ImageModal from './ImageModal';
-import VideoModal from './VideoModal';
 
 interface AppCardProps {
   app: App;
@@ -12,7 +11,6 @@ interface AppCardProps {
 export default function AppCard({ app }: AppCardProps) {
   const [isDemoGifModalOpen, setIsDemoGifModalOpen] = useState(false);
   const [isArchitectureModalOpen, setIsArchitectureModalOpen] = useState(false);
-  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [isDesignIntentExpanded, setIsDesignIntentExpanded] = useState(false);
   const [isArchitectureExpanded, setIsArchitectureExpanded] = useState(false);
 
@@ -47,7 +45,7 @@ export default function AppCard({ app }: AppCardProps) {
             onClick={() => setIsDesignIntentExpanded(!isDesignIntentExpanded)}
             className="w-full text-left bg-gray-50 hover:bg-gray-100 px-4 py-3 rounded-lg transition-colors flex items-center justify-between"
           >
-            <span className="text-sm font-medium text-gray-900">設計意図を見る</span>
+            <span className="text-sm font-medium text-gray-900">アプリの設計思想</span>
             <svg 
               className={`w-4 h-4 text-gray-600 transition-transform ${isDesignIntentExpanded ? 'rotate-180' : ''}`}
               fill="none" 
@@ -69,11 +67,11 @@ export default function AppCard({ app }: AppCardProps) {
           {/* Architecture Diagram Accordion */}
           <button
             onClick={() => setIsArchitectureExpanded(!isArchitectureExpanded)}
-            className="w-full bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center justify-between"
+            className="w-full text-left bg-gray-50 hover:bg-gray-100 px-4 py-3 rounded-lg transition-colors flex items-center justify-between"
           >
-            <span>アーキテクチャ図を見る</span>
+            <span className="text-sm font-medium text-gray-900">アーキテクチャ</span>
             <svg 
-              className={`w-4 h-4 text-white transition-transform ${isArchitectureExpanded ? 'rotate-180' : ''}`}
+              className={`w-4 h-4 text-gray-600 transition-transform ${isArchitectureExpanded ? 'rotate-180' : ''}`}
               fill="none" 
               stroke="currentColor" 
               viewBox="0 0 24 24"
@@ -101,21 +99,13 @@ export default function AppCard({ app }: AppCardProps) {
             </div>
           )}
           
-          {app.demoVideoUrl && (
-            <button
-              onClick={() => setIsVideoModalOpen(true)}
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
-            >
-              デモ動画を見る
-            </button>
-          )}
           
           {app.interactiveDemoUrl && (
             <a
               href={app.interactiveDemoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-lg text-sm font-medium text-center transition-colors"
+              className="block w-full bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg text-base font-bold text-center transition-colors shadow-lg hover:shadow-xl"
             >
               体験デモを試す
             </a>
@@ -139,14 +129,6 @@ export default function AppCard({ app }: AppCardProps) {
         onClose={() => setIsArchitectureModalOpen(false)}
       />
 
-      {app.demoVideoUrl && (
-        <VideoModal
-          videoUrl={app.demoVideoUrl}
-          isOpen={isVideoModalOpen}
-          onClose={() => setIsVideoModalOpen(false)}
-          title={`${app.name} デモ動画`}
-        />
-      )}
     </>
   );
 }
