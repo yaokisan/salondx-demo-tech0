@@ -46,5 +46,5 @@ export const appData: AppData = {
   },
   promotionalVideoUrl: 'https://www.youtube.com/embed/SwtAThblX-c',
   invitationMessage: '少しでも我々に興味を持っていただけたら、ご連絡くださると嬉しいです！',
-  xAccountUrl: 'https://x.com/yaokisan'
+  xAccountUrl: 'https://x.com/sc_fas_cod'
 };
