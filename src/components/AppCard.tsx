@@ -22,14 +22,14 @@ export default function AppCard({ app }: AppCardProps) {
           <p className="text-sm text-gray-600 italic">{app.concept}</p>
         </div>
 
-        {/* Demo GIF Display */}
+        {/* Demo Thumbnail Display */}
         <div className="mb-4">
           <div 
             className="w-full h-48 bg-white rounded-lg overflow-hidden cursor-pointer hover:shadow-md transition-shadow border border-gray-200 p-4 relative group"
             onClick={() => setIsDemoGifModalOpen(true)}
           >
             <img
-              src={app.demoGifImage}
+              src={app.demoThumbnailImage}
               alt={`${app.name} デモ`}
               className="w-full h-full object-contain"
               style={{ display: 'block' }}
