@@ -28,7 +28,7 @@ export default function JourneySection({
         />
       </div>
 
-      <section className="py-16 bg-white">
+      <section className="py-8 bg-white">
         <div className="container mx-auto px-4">
           
           {/* Promotional Video First */}

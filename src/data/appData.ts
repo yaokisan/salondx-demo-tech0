@@ -35,14 +35,14 @@ export const appData: AppData = {
     }
   ],
   businessModel: {
-    title: 'VBO事業 ビジネスモデル',
+    title: 'VBO事業サービス概要',
     imageUrl: '/images/vbo-business-model.png',
-    description: 'VBO事業の包括的なビジネスモデル図'
+    description: 'VBO事業のサービス概要図'
   },
   targetAudience: {
     title: 'VBO事業 想定ターゲット',
     imageUrl: '/images/vbo-target-audience.png',
-    description: 'VBO事業が対象とする顧客層の分析'
+    description: 'VBO事業が対象とする顧客層について'
   },
   promotionalVideoUrl: 'https://www.youtube.com/embed/SwtAThblX-c',
   invitationMessage: '少しでも我々に興味を持っていただけたら、ご連絡くださると嬉しいです！',

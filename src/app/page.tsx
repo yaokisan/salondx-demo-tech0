@@ -1,6 +1,7 @@
 import EngineSection from '@/components/EngineSection';
 import JourneySection from '@/components/JourneySection';
 import InvitationSection from '@/components/InvitationSection';
+import AfterwordSection from '@/components/AfterwordSection';
 import { appData } from '@/data/appData';
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
         targetAudience={appData.targetAudience}
         promotionalVideoUrl={appData.promotionalVideoUrl}
       />
+      <AfterwordSection />
       <InvitationSection 
         invitationMessage={appData.invitationMessage}
         xAccountUrl={appData.xAccountUrl}
