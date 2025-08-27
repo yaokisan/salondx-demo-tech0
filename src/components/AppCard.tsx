@@ -42,8 +42,27 @@ export default function AppCard({ app }: AppCardProps) {
               className="w-full h-full object-contain"
               style={{ display: 'block' }}
             />
+            
+            {/* Play Button Overlay */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="bg-black bg-opacity-60 rounded-full p-4 group-hover:bg-opacity-80 transition-all duration-200 group-hover:scale-110">
+                <svg 
+                  className="w-8 h-8 text-white" 
+                  fill="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+            </div>
+            
+            {/* Demo Label */}
+            <div className="absolute top-3 left-3 bg-blue-600 bg-opacity-90 px-3 py-1 rounded-full">
+              <span className="text-xs text-white font-medium">デモ動画</span>
+            </div>
+            
             <div className="absolute top-2 right-2 bg-white bg-opacity-90 px-2 py-1 rounded text-xs opacity-0 group-hover:opacity-100 transition-opacity shadow">
-              タップでデモを再生
+              タップで再生
             </div>
           </div>
         </div>
